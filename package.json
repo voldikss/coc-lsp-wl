@@ -1,0 +1,86 @@
+{
+  "name": "coc-lsp-wl",
+  "version": "1.0.0",
+  "description": "coc.nvim client for Wolfram Language Server",
+  "publisher": "voldikss",
+  "keywords": [
+    "coc.nvim",
+    "wolfram",
+    "mathematica"
+  ],
+  "engines": {
+    "coc": "^0.0.73"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "prepare": "npx npm-run-all clean build"
+  },
+  "activationEvents": [
+    "onLanguage:mma",
+    "onLanguage:wl"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "wolfram language server configuration",
+      "type": "object",
+      "properties": {
+        "lsp-wl.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "whether enable wolfram language lsp"
+        },
+        "lsp-wl.maxNumberOfProblems": {
+          "scope": "resource",
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems produced by the server."
+        },
+        "lsp-wl.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the wolfram language server."
+        },
+        "lsp-wl.port": {
+          "scope": "user",
+          "type": "number",
+          "default": 6536,
+          "description": "Port to communicate with language server."
+        },
+        "lsp-wl.wolframExecutablePath": {
+          "type": "string",
+          "default": "wolfram",
+          "description": "Path to wolfram executable."
+        },
+        "lsp-wl.wolframLanguageServerPath": {
+          "scope": "user",
+          "type": "string",
+          "default": "/path/to/lsp-wl",
+          "description": "Path to wolfram language server directory."
+        }
+      }
+    }
+  },
+  "author": "dyzplus@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@chemzqm/tsconfig": "^0.0.3",
+    "@chemzqm/tslint-config": "^1.0.18",
+    "@types/node": "^12.0.10",
+    "coc.nvim": "^0.0.73",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
+  }
+}

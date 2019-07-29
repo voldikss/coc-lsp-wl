@@ -50,3 +50,6 @@ Coc.nvim client for Wolfram Language Server, fork of [vscode-lsp-wl](https://git
 # Screenshots
 
 ![](https://user-images.githubusercontent.com/20282795/62026404-84922500-b20d-11e9-88a3-2196428987c0.png)
+![](https://user-images.githubusercontent.com/20282795/62032075-56b3dd00-b21b-11e9-8d8a-05c6e4f17eac.png)
+
+for better syntax highlight support, refer to [vim-mma](https://github.com/voldikss/vim-mma)
